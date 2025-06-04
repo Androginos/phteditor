@@ -217,4 +217,6 @@
   cursor: pointer;
   font-family: 'This Cafe', sans-serif;
   transition: all 0.3s ease;
-} 
+}
+
+/* Sadece orijinal browser stilleri kalacak, mobil stiller kaldırıldı */ 

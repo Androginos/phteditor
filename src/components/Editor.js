@@ -38,4 +38,19 @@
       />
     </div>
   </div>
-)} 
+)}
+
+<div className="button-group">
+  <button onClick={handleReset} className="reset-button">
+    Reset All
+  </button>
+  <div className="contract-address" style={{ 
+    fontFamily: "'This Cafe', sans-serif",
+    fontSize: "1.2em",
+    color: "var(--text-color)",
+    marginTop: "10px",
+    textAlign: "center"
+  }}>
+    {process.env.REACT_APP_CONTRACT_ADDRESS || "7bY6WtXPgNjNMpsURCKeRgYXSXUsssB3T5cuFp2jpump"}
+  </div>
+</div> 
