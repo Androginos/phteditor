@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Editor from "./Editor";
 import OverlaySelector from "./OverlaySelector";
 import ImageUploader from "./ImageUploader";
@@ -26,6 +26,17 @@ function App() {
   const [userProps, setUserProps] = useState(null);
   const [overlayProps, setOverlayProps] = useState(null);
   const [theme, setTheme] = useState('dark');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Seçili item'ın props ve setProps'unu belirle
   let controlPanelProps = { props: { scaleX: 1, rotation: 0 }, setProps: () => {}, disabled: true };
@@ -38,23 +49,16 @@ function App() {
   const t = THEMES[theme];
 
   return (
-    <div style={{ minHeight: "100vh", background: t.background, display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.3s' }}>
-      <div style={{ position: 'absolute', top: 24, right: 32, zIndex: 10, display: 'flex', gap: 12 }}>
-        <button onClick={() => setTheme('light')} style={{ padding: '6px 18px', borderRadius: 8, border: theme==='light' ? '2px solid #5fa8ff' : '2px solid #bbb', background: '#fff', color: '#333', fontWeight: 'bold', cursor: 'pointer' }}>Light</button>
-        <button onClick={() => setTheme('dark')} style={{ padding: '6px 18px', borderRadius: 8, border: theme==='dark' ? '2px solid #5fa8ff' : '2px solid #bbb', background: '#23272e', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>Dark</button>
-      </div>
-      <div style={{ display: 'flex', background: t.panel, borderRadius: 24, boxShadow: `8px 8px 0 ${t.panelShadow}`, padding: 32, gap: 40, transition: 'background 0.3s' }}>
-        {/* Left panel */}
-        <div style={{ minWidth: 260, display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-start' }}>
-          <h1 style={{ fontFamily: 'This Cafe', margin: '0 0 16px 0', fontSize: 28, letterSpacing: 1, color: t.label }}>TinFoilCatHat Photo Editor</h1>
+    <div className={`app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <div className="app-container">
+        <div className="left-panel">
           <ImageUploader setUserImage={setUserImage} />
           <OverlaySelector setOverlay={setOverlay} color={t.label} bg={theme === 'dark' ? '#23272e' : '#eee'} />
           <div style={{ marginTop: 24 }}>
             <ControlPanel {...controlPanelProps} />
           </div>
         </div>
-        {/* Right panel */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: t.panel, borderRadius: 20, boxShadow: `4px 4px 0 ${t.panelShadow}`, padding: 24, transition: 'background 0.3s' }}>
+        <div className="right-panel">
           <Editor
             userImage={userImage}
             overlay={overlay}
@@ -64,9 +68,16 @@ function App() {
             setUserProps={setUserProps}
             overlayProps={overlayProps}
             setOverlayProps={setOverlayProps}
+            isMobile={isMobile}
           />
         </div>
       </div>
+      <button 
+        className="theme-toggle"
+        onClick={() => setIsDarkMode(!isDarkMode)}
+      >
+        {isDarkMode ? '☀️' : '🌙'}
+      </button>
     </div>
   );
 }
