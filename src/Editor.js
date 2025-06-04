@@ -183,7 +183,7 @@ export default function Editor({ userImage, overlay, selected, setSelected, user
           {(!hasUser && !userImage) && (
             <Text
               text={"UPLOAD YOUR CAT'S PHOTO HERE"}
-              x={0}
+              x={25}
               y={140}
               width={FRAME_WIDTH}
               height={FRAME_HEIGHT}
