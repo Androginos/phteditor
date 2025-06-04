@@ -219,4 +219,14 @@
   transition: all 0.3s ease;
 }
 
+.contract-address {
+  font-family: 'This Cafe', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: var(--text-color);
+  margin-top: 10px;
+  text-align: center;
+  transition: font-family 0.3s ease;
+}
+
 /* Sadece orijinal browser stilleri kalacak, mobil stiller kaldırıldı */ 

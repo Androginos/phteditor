@@ -158,8 +158,37 @@ export default function Editor({ userImage, overlay, selected, setSelected, user
     setSelected(null);
   };
 
+  const contractLabel = "CONTRACT ADDRESS";
+  const contractAddress = "8aSSFe17Mdsvipt2DF8xDsaiAeNvkj4JpY42vUBLpump";
+  const titleText = process.env.REACT_APP_TITLE_TEXT || "TinFoilCatHat";
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{
+        position: "absolute",
+        top: 13,
+        left: 0,
+        width: "100%",
+        zIndex: 1000,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        pointerEvents: "none"
+      }}>
+        <div style={{
+          fontFamily: "'This Cafe', 'Arial', sans-serif",
+          fontSize: "1.4em",
+          color: "#39FF14",
+          textAlign: "center",
+          fontWeight: "700",
+          textShadow: "0 0 10px rgba(57, 255, 20, 0.7)",
+          pointerEvents: "auto",
+          letterSpacing: "2px",
+          textTransform: "uppercase"
+        }}>
+          {contractLabel}<br />{contractAddress}
+        </div>
+      </div>
       <Stage ref={stageRef} width={FRAME_WIDTH} height={FRAME_HEIGHT} style={{
         borderRadius: 18,
         border: '4px solid #39FF14', // uzaylı yeşili

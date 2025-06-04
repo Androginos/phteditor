@@ -44,13 +44,39 @@
   <button onClick={handleReset} className="reset-button">
     Reset All
   </button>
-  <div className="contract-address" style={{ 
-    fontFamily: "'This Cafe', sans-serif",
-    fontSize: "1.2em",
-    color: "var(--text-color)",
-    marginTop: "10px",
-    textAlign: "center"
+  <div style={{
+    position: "absolute",
+    top: 24,
+    left: 0,
+    width: "100%",
+    zIndex: 1000,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    pointerEvents: "none"
   }}>
-    {process.env.REACT_APP_CONTRACT_ADDRESS || "7bY6WtXPgNjNMpsURCKeRgYXSXUsssB3T5cuFp2jpump"}
+    <div style={{
+      fontFamily: "'This Cafe', 'Arial', sans-serif",
+      fontSize: "1.2em",
+      color: "#39FF14",
+      textAlign: "center",
+      fontWeight: "400",
+      textShadow: "0 0 10px rgba(57, 255, 20, 0.5)",
+      pointerEvents: "auto"
+    }}>
+      Contract: 7bY6WtXPgNjNMpsURCKeRgYXSXUsssB3T5cuFp2jpump
+    </div>
+    <div style={{
+      fontFamily: "'This Cafe', 'Arial', sans-serif",
+      fontSize: "2em",
+      color: "#39FF14",
+      marginTop: "8px",
+      textAlign: "center",
+      fontWeight: "400",
+      textShadow: "0 0 10px rgba(57, 255, 20, 0.5)",
+      pointerEvents: "auto"
+    }}>
+      7bY6WtXPgNjNMpsURCKeRgYXSXUsssB3T5cuFp2jpump
+    </div>
   </div>
 </div> 
