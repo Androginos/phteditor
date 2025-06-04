@@ -166,8 +166,8 @@ export default function Editor({ userImage, overlay, selected, setSelected, user
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{
         position: "absolute",
-        top: 13,
-        left: 0,
+        top: 775,
+        left: -250,
         width: "100%",
         zIndex: 1000,
         display: "flex",
@@ -176,17 +176,28 @@ export default function Editor({ userImage, overlay, selected, setSelected, user
         pointerEvents: "none"
       }}>
         <div style={{
-          fontFamily: "'This Cafe', 'Arial', sans-serif",
-          fontSize: "1.4em",
+          fontFamily: "Arial, sans-serif",
+          fontSize: "1.5em",
           color: "#39FF14",
           textAlign: "center",
           fontWeight: "700",
           textShadow: "0 0 10px rgba(57, 255, 20, 0.7)",
           pointerEvents: "auto",
-          letterSpacing: "2px",
-          textTransform: "uppercase"
+          letterSpacing: "1px",
+          marginBottom: "2px"
         }}>
-          {contractLabel}<br />{contractAddress}
+          {contractLabel}
+        </div>
+        <div style={{
+          fontFamily: "Arial, sans-serif",
+          fontSize: "1.2em",
+          color: "#39FF14",
+          textAlign: "center",
+          fontWeight: "400",
+          textShadow: "0 0 6px rgba(57, 255, 20, 0.5)",
+          pointerEvents: "auto"
+        }}>
+          {contractAddress}
         </div>
       </div>
       <Stage ref={stageRef} width={FRAME_WIDTH} height={FRAME_HEIGHT} style={{
