@@ -220,7 +220,7 @@ export default function Editor({ userImage, overlay, selected, setSelected, user
         </Layer>
         {/* Eklenen görsel en altta */}
         <Layer>
-          {(!hasUser && !userImage) && (
+          {/* {(!hasUser && !userImage) && (
             <Text
               text={"UPLOAD YOUR CAT'S PHOTO HERE"}
               x={25}
@@ -236,7 +236,7 @@ export default function Editor({ userImage, overlay, selected, setSelected, user
               shadowColor="#fff8"
               shadowBlur={2}
             />
-          )}
+          )} */}
           {hasUser && userImage && userProps && (
             <DraggableImage
               src={userImage}

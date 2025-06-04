@@ -43,6 +43,45 @@ function App() {
         <button onClick={() => setTheme('light')} style={{ padding: '6px 18px', borderRadius: 8, border: theme==='light' ? '2px solid #5fa8ff' : '2px solid #bbb', background: '#fff', color: '#333', fontWeight: 'bold', cursor: 'pointer' }}>Light</button>
         <button onClick={() => setTheme('dark')} style={{ padding: '6px 18px', borderRadius: 8, border: theme==='dark' ? '2px solid #5fa8ff' : '2px solid #bbb', background: '#23272e', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>Dark</button>
       </div>
+      {/* DEX LOGO ve linki - tema butonlarının hemen altında */}
+      <div style={{ position: 'absolute', top: 74, right: 32, zIndex: 10, width: 120, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <a
+          href="https://dexscreener.com/solana/7uyyetee9zhuyl9jiyjjhpune2qkpyqsbvmxd9daj2db"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        >
+          <img
+            src={process.env.PUBLIC_URL + "/dexlogo.png"}
+            alt="Dex Logo"
+            style={{ height: 100, width: 100, borderRadius: "50%", opacity: 0.98, cursor: "pointer", boxShadow: "0 0 24px #39FF1488", border: "3px solid #39FF14", background: "#fff" }}
+          />
+        </a>
+        <a
+          href="https://pump.fun/coin/8aSSFe17Mdsvipt2DF8xDsaiAeNvkj4JpY42vUBLpump"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: 18 }}
+        >
+          <img
+            src={process.env.PUBLIC_URL + "/pumplogo.png"}
+            alt="Pump Logo"
+            style={{ height: 100, width: 100, borderRadius: "50%", opacity: 0.98, cursor: "pointer", boxShadow: "0 0 24px #39FF1488", border: "3px solid #39FF14", background: "#fff" }}
+          />
+        </a>
+        <a
+          href="https://x.com/i/communities/1930397900393095176/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: 18 }}
+        >
+          <img
+            src={process.env.PUBLIC_URL + "/xlogo.png"}
+            alt="X Logo"
+            style={{ height: 100, width: 100, borderRadius: "50%", opacity: 0.98, cursor: "pointer", boxShadow: "0 0 24px #39FF1488", border: "3px solid #39FF14", background: "#fff" }}
+          />
+        </a>
+      </div>
       <div style={{ display: 'flex', background: t.panel, borderRadius: 24, boxShadow: `8px 8px 0 ${t.panelShadow}`, padding: 32, gap: 40, transition: 'background 0.3s' }}>
         {/* Left panel */}
         <div style={{ minWidth: 260, display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-start' }}>
