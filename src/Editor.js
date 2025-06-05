@@ -199,6 +199,19 @@ export default function Editor({ userImage, overlay, selected, setSelected, user
         }}>
           {contractAddress}
         </div>
+        <div style={{
+          fontFamily: "Arial, sans-serif",
+          fontSize: "1.5em",
+          color: "#39FF14",
+          textAlign: "center",
+          fontWeight: "400",
+          textShadow: "0 0 8px rgba(57, 255, 20, 0.5)",
+          pointerEvents: "auto",
+          marginTop: "10px",
+          letterSpacing: "2px"
+        }}>
+          $TFCH
+        </div>
       </div>
       <Stage ref={stageRef} width={FRAME_WIDTH} height={FRAME_HEIGHT} style={{
         borderRadius: 18,
